@@ -20,8 +20,8 @@
   var lampRef = db.ref('lamp');
 
   // Registra as funções que atualizam os gráficos e dados atuais da telemetria
-  tempRef.on('value', onNewData('currentTemp', 'tempLineChart' , 'Temperatura', 'C°'));
-  umidRef.on('value', onNewData('currentUmid', 'umidLineChart' , 'Umidade', '%'));
+  tempRef.on('value', onNewData('currentTemp', 'tempLineChart' , 'Nhiệt độ', 'C°'));
+  umidRef.on('value', onNewData('currentUmid', 'umidLineChart' , 'Độ ẩm', '%'));
 
 
   // Registrar função ao alterar valor de presença
