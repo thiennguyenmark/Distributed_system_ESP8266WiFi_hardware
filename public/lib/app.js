@@ -1,5 +1,5 @@
 (function(){
-  // Inicia o firebase Firebase
+  // Config firebase
   var config = {
    apiKey: "AIzaSyCzzIBg1u5XhWjye3Hu58AboXYaN7l8Cpk",
    authDomain: "thiennguyen-phantan.firebaseapp.com",
@@ -13,18 +13,18 @@
 
   var db = firebase.database();
 
-  // Cria os listeners dos dados no firebase
+  // Get varrible in firebase
   var tempRef = db.ref('temperature');
   var umidRef = db.ref('humidity');
   var presenceRef = db.ref('presence');
   var lampRef = db.ref('lamp');
 
-  // Registra as funções que atualizam os gráficos e dados atuais da telemetria
+  // Keep real time database
   tempRef.on('value', onNewData('currentTemp', 'tempLineChart' , 'Nhiệt độ', 'C°'));
   umidRef.on('value', onNewData('currentUmid', 'umidLineChart' , 'Độ ẩm', '%'));
 
 
-  // Registrar função ao alterar valor de presença
+  // Get changed with updating value
   presenceRef.on('value', function(snapshot){
     var value = snapshot.val();
     var el = document.getElementById('currentPresence')
@@ -35,7 +35,7 @@
     }
   });
 
-  // Registrar função ao alterar valor da lampada
+  // Take change when getting clicked
   var currentLampValue = false;
   lampRef.on('value', function(snapshot){
     var value = snapshot.val();
@@ -48,7 +48,7 @@
     currentLampValue = !!value;
   });
 
-  // Registrar função de click no botão de lampada
+  // Get click
   var btnLamp = document.getElementById('btn-lamp');
   btnLamp.addEventListener('click', function(evt){
     lampRef.set(!currentLampValue);
@@ -56,10 +56,7 @@
 
 })();
 
-
-// Retorna uma função que de acordo com as mudanças dos dados
-// Atualiza o valor atual do elemento, com a metrica passada (currentValueEl e metric)
-// e monta o gráfico com os dados e descrição do tipo de dados (chartEl, label)
+// Put data to chart
 function onNewData(currentValueEl, chartEl, label, metric){
   return function(snapshot){
     var readings = snapshot.val();
@@ -77,8 +74,7 @@ function onNewData(currentValueEl, chartEl, label, metric){
   }
 }
 
-// Constroi um gráfico de linha no elemento (el) com a descrição (label) e os
-// dados passados (data)
+// Build chart from data
 function buildLineChart(el, label, data){
   var elNode = document.getElementById(el);
   new Chart(elNode, {
