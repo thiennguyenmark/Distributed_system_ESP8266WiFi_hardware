@@ -47,7 +47,6 @@
     }
     currentLampValue = !!value;
   });
-
   // Get click
   var btnLamp = document.getElementById('btn-lamp');
   btnLamp.addEventListener('click', function(evt){
@@ -105,7 +104,7 @@ function buildLineChart(el, label, data){
 // }
 //
 // var db = firebase.database();
-// var ref = db.ref("temperature");
+// var ref = db.ref("humidity");
 //
 // setInterval(function(){
 //   data = {};
