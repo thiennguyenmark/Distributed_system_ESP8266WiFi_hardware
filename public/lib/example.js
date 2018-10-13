@@ -93,3 +93,69 @@ function buildLineChart(el, label, data){
     }
   });
 }
+
+// function guid() {
+//   function s4() {
+//     return Math.floor((1 + Math.random()) * 0x10000)
+//       .toString(16)
+//       .substring(1);
+//   }
+//   return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+// }
+//
+// var db = firebase.database();
+// var ref = db.ref("humidity");
+//
+// setInterval(function(){
+//   data = {};
+//
+//   data[guid()] = 100 * (Math.random()).toFixed(2);
+//   data[guid()] = 100 * (Math.random()).toFixed(2);
+//   data[guid()] = 100 * (Math.random()).toFixed(2);
+//   data[guid()] = 100 * (Math.random()).toFixed(2);
+//   data[guid()] = 100 * (Math.random()).toFixed(2);
+//   data[guid()] = 100 * (Math.random()).toFixed(2);
+//   data[guid()] = 100 * (Math.random()).toFixed(2);
+//   data[guid()] = 100 * (Math.random()).toFixed(2);
+//   data[guid()] = 100 * (Math.random()).toFixed(2);
+//   data[guid()] = 100 * (Math.random()).toFixed(2);
+//   data[guid()] = 100 * (Math.random()).toFixed(2);
+//   data[guid()] = 100 * (Math.random()).toFixed(2);
+//   data[guid()] = 100 * (Math.random()).toFixed(2);
+//   data[guid()] = 100 * (Math.random()).toFixed(2);
+//
+//   ref.set(data);
+//   console.log('----->', data);
+// }, 2000)
+
+
+
+
+// function guid() {
+//   function s4() {
+//     return Math.floor((1 + Math.random()) * 0x10000)
+//       .toString(16)
+//       .substring(1);
+//   }
+//   var d = new Date();
+//   var date = d.getDate();
+//   var hour = d.getHours();
+//   var minute = d.getMinutes();
+//   var seccond = d.getSeconds();
+//   return 'ngay' + date + 'Thoi gian:' + hour + '-' + minute + '-' + seccond;
+// }
+//
+// var db = firebase.database();
+// var ref = db.ref("humidity-time");
+//
+// setInterval(function(){
+//   data = {};
+//   data[guid()] = 100 * (Math.random()).toFixed(2);
+//   data[guid()] = 100 * (Math.random()).toFixed(2);
+//   data[guid()] = 100 * (Math.random()).toFixed(2);
+//   data[guid()] = 100 * (Math.random()).toFixed(2);
+//   data[guid()] = 100 * (Math.random()).toFixed(2);
+//   for (var i = 0; i< data.length;i ++){
+//   }
+//   console.log('----->', data);
+// }, 2000)
