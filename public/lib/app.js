@@ -1,5 +1,5 @@
+// Config firebase
 (function(){
-  // Config firebase
   var config = {
    apiKey: "AIzaSyCzzIBg1u5XhWjye3Hu58AboXYaN7l8Cpk",
    authDomain: "thiennguyen-phantan.firebaseapp.com",
@@ -27,7 +27,7 @@
   // Get changed with updating value
   presenceRef.on('value', function(snapshot){
     var value = snapshot.val();
-    var el = document.getElementById('currentPresence')
+    var el = document.getElementById('currentPresence');
     if(value){
       el.classList.add('green-text');
     }else{
