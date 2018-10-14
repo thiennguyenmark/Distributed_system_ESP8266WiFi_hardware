@@ -23,6 +23,7 @@ recognition.onresult = function(event) {
   var mobileRepeatBug = (current == 1 && transcript == event.results[0][0].transcript);
 
   if(!mobileRepeatBug) {
+
     voiceContent = '';
     voiceContent += transcript;
     console.log(voiceContent);
@@ -39,6 +40,7 @@ recognition.onresult = function(event) {
         lampRef.set(!currentLampValue);
       });
     }
+
     if (voiceContent == ' Tắt đèn' || voiceContent == ' tắt đèn'){
       voiceContent = '';
       console.log(voiceContent);
@@ -56,4 +58,5 @@ recognition.onresult = function(event) {
 
   }
 };
+
 recognition.start();
