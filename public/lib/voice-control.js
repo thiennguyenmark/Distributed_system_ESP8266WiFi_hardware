@@ -12,16 +12,13 @@ var voiceContent = '';
 /*-----------------------------
       Voice Recognition
 ------------------------------*/
-
 recognition.continuous = true;
 recognition.onresult = function(event) {
   // event is a SpeechRecognitionEvent object.
   var current = event.resultIndex;
-
   // Get a transcript of what was said.
   var transcript = event.results[current][0].transcript;
   var mobileRepeatBug = (current == 1 && transcript == event.results[0][0].transcript);
-
   if(!mobileRepeatBug) {
 
     voiceContent = '';
