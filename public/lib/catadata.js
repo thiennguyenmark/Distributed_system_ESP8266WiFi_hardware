@@ -78,20 +78,19 @@ function onNewData(currentValueEl, chartEl, label, metric){
 // Build chart from data
 function buildLineChart(el, label, data){
   var elNode = document.getElementById(el);
-
   new Chart(elNode, {
     type: 'line',
     data: {
-        labels: new Array(data.length).fill(""),
+        labels: new Array(20).fill(""),
         datasets: [{
             label:        label,
             data:         data,
             borderWidth:  1,
             fill:         false,
-            spanGaps:     true,
+            spanGaps:     false,
             lineTension:  0.1,
-            backgroundColor: "#19a69a",
-            borderColor: "#19a69a"
+            backgroundColor: "#F9A825",
+            borderColor: "#F9A825"
         }]
     }
   });
