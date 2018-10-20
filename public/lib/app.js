@@ -29,9 +29,9 @@
     var value = snapshot.val();
     var el = document.getElementById('currentPresence');
     if(value){
-      el.classList.add('green-text');
+      el.classList.add('red-text');
     }else{
-      el.classList.remove('green-text');
+      el.classList.remove('red-text');
     }
   });
 
