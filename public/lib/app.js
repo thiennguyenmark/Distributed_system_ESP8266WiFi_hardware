@@ -64,7 +64,7 @@ function onNewData(currentValueEl, chartEl, label, metric){
         var data = [];
         for(var key in readings){
           currentValue = readings[key]
-          if (data.length > 20)
+          if (data.length > 100)
           data = data.slice(1, data.length);
           data.push(currentValue);
         }
@@ -93,6 +93,25 @@ function buildLineChart(el, label, data){
             backgroundColor: "#19a69a",
             borderColor: "#19a69a"
         }]
-    }
+    },
+    options: {
+            scales: {
+               yAxes: [{
+                  display: true,
+                  stacked: true,
+                  ticks: {
+                      min: 0, // minimum value
+                      max: 100 // maximum value
+                  }
+         }]
+       },
+       animation: {
+            duration: 0,
+            xAxis: true,
+            yAxis: true,
+        }
+
+
+          }
   });
 }
